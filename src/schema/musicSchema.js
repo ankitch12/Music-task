@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
-let musicSchema = new mongoose.Schema(
+const musicSchema = new mongoose.Schema(
   {
     title: String,
     description: String,
@@ -27,7 +27,7 @@ let musicSchema = new mongoose.Schema(
   {
     timestamps: true,
   }
-);
-let Music = new mongoose.model("rooms", musicSchema);
+)
+const Music = new mongoose.model('rooms', musicSchema)
 
-module.exports = Music;
+module.exports = Music

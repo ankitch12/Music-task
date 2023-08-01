@@ -1,11 +1,11 @@
-const express = require("express");
-const { Joi, celebrate } = require("celebrate");
-const musicController = require("../controller/music");
+const express = require('express')
+const { Joi, celebrate } = require('celebrate')
+const musicController = require('../controller/music')
 
-const router = express.Router();
+const router = express.Router()
 
 router.post(
-  "/add-music",
+  '/add-music',
   celebrate({
     body: Joi.object().keys({
       title: Joi.string().required(),
@@ -31,9 +31,9 @@ router.post(
     }),
   }),
   musicController.addMusic
-);
+)
 router.post(
-  "/update-music",
+  '/update-music',
   celebrate({
     body: Joi.object().keys({
       _id: Joi.string().required(),
@@ -61,23 +61,23 @@ router.post(
     }),
   }),
   musicController.searchMusic
-);
+)
 router.post(
-  "/delete-music",
+  '/delete-music',
   celebrate({
     body: Joi.object().keys({
       _id: Joi.string().required(),
     }),
   }),
   musicController.searchMusic
-);
+)
 router.get(
-  "/music-listing",
+  '/music-listing',
   celebrate({
     query: Joi.object().keys({
       search: Joi.string().required(),
     }),
   }),
   musicController.searchMusic
-);
-module.exports = router;
+)
+module.exports = router
